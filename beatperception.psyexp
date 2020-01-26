@@ -1,23 +1,24 @@
-<PsychoPy2experiment version="1.78.01" encoding="utf-8">
+<PsychoPy2experiment version="1.82.02" encoding="utf-8">
   <Settings>
     <Param name="Show mouse" val="False" valType="bool" updates="None"/>
-    <Param name="Save csv file" val="False" valType="bool" updates="None"/>
+    <Param name="Data filename" val="u'data' + os.path.sep + expInfo['date']" valType="code" updates="None"/>
     <Param name="Monitor" val="testMonitor" valType="str" updates="None"/>
     <Param name="Enable Escape" val="True" valType="bool" updates="None"/>
     <Param name="color" val="$[0,0,0]" valType="str" updates="None"/>
     <Param name="Window size (pixels)" val="[1680, 1050]" valType="code" updates="None"/>
     <Param name="Full-screen window" val="True" valType="bool" updates="None"/>
     <Param name="colorSpace" val="rgb" valType="str" updates="None"/>
-    <Param name="Save log file" val="True" valType="bool" updates="None"/>
     <Param name="Experiment info" val="{u'                   uid': u'001', u'            session': u'001'}" valType="code" updates="None"/>
-    <Param name="Save excel file" val="False" valType="bool" updates="None"/>
+    <Param name="Save csv file" val="False" valType="bool" updates="None"/>
+    <Param name="Show info dlg" val="True" valType="bool" updates="None"/>
     <Param name="Save wide csv file" val="True" valType="bool" updates="None"/>
     <Param name="Save psydat file" val="True" valType="bool" updates="None"/>
     <Param name="expName" val="Beat Perception Task" valType="str" updates="None"/>
     <Param name="logging level" val="exp" valType="code" updates="None"/>
+    <Param name="blendMode" val="avg" valType="str" updates="None"/>
+    <Param name="Save excel file" val="False" valType="bool" updates="None"/>
     <Param name="Units" val="use prefs" valType="str" updates="None"/>
-    <Param name="Show info dlg" val="True" valType="bool" updates="None"/>
-    <Param name="Saved data folder" val="" valType="code" updates="None"/>
+    <Param name="Save log file" val="True" valType="bool" updates="None"/>
     <Param name="Screen" val="1" valType="num" updates="None"/>
   </Settings>
   <Routines>
@@ -28,7 +29,7 @@
         <Param name="name" val="text_end" valType="code" updates="None"/>
         <Param name="wrapWidth" val="" valType="code" updates="constant"/>
         <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="End of experiment.&#13;&#10;&#13;&#10;Thanks for participating!&#13;&#10;&#13;&#10;Please press the space bar to close the experiment." valType="str" updates="constant"/>
+        <Param name="text" val="A kísérlet befejeződött.&#13;&#10;&#13;&#10;Köszönjük a részvételt!&#13;&#10;&#13;&#10;Kérjük, nyomja meg a szóköz billentyűt a kísérletből való kilépéshez." valType="str" updates="constant"/>
         <Param name="stopVal" val="" valType="code" updates="constant"/>
         <Param name="durationEstim" val="" valType="code" updates="None"/>
         <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
@@ -65,7 +66,7 @@
         <Param name="name" val="text_start" valType="code" updates="None"/>
         <Param name="wrapWidth" val="" valType="code" updates="constant"/>
         <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="Gold-MSI Beat Alignment &#13;&#10;Perception Task&#13;&#10;&#13;&#10;If you have read the instructions and don't have any questions, then click SPACE BAR to start the test.&#13;&#10;&#13;&#10;&#13;&#10;" valType="str" updates="constant"/>
+        <Param name="text" val="Gold-MSI Ütemilleszkedés&#13;&#10;érzékelését vizsgáló teszt&#13;&#10;&#13;&#10;Amennyiben elolvasta az instrukciókat, és nincsen további kérdése, kérjük, nyomja meg a SZÓKÖZ billentyűt a kísérlet indításához.&#13;&#10;&#13;&#10;&#13;&#10;" valType="str" updates="constant"/>
         <Param name="stopVal" val="" valType="code" updates="constant"/>
         <Param name="durationEstim" val="" valType="code" updates="None"/>
         <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
@@ -121,10 +122,10 @@
       <CodeComponent name="code">
         <Param name="Begin Experiment" val="sound_1 = sound.Sound('A',secs=1)&#10;" valType="extendedCode" updates="constant"/>
         <Param name="name" val="code" valType="code" updates="None"/>
-        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
         <Param name="Begin Routine" val="" valType="extendedCode" updates="constant"/>
         <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
         <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
       </CodeComponent>
       <SoundComponent name="sound_1">
         <Param name="sound" val="$sound1" valType="str" updates="set every repeat"/>
@@ -165,7 +166,7 @@
         <Param name="name" val="decide_text" valType="code" updates="None"/>
         <Param name="wrapWidth" val="80" valType="code" updates="constant"/>
         <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="Are the beeps on the beat &#13;&#10;or off the beat?" valType="str" updates="constant"/>
+        <Param name="text" val="Illeszkedtek a pittyegő hangok a zene ütemére, &#13;&#10;vagy el voltak csúszva a zenéhez képest?&#10;1 = Illeszedtek, 2 = El voltak csúszva" valType="str" updates="constant"/>
         <Param name="stopVal" val="" valType="code" updates="constant"/>
         <Param name="durationEstim" val="10" valType="code" updates="None"/>
         <Param name="pos" val="[0, 0.8]" valType="code" updates="constant"/>
@@ -180,30 +181,32 @@
         <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
       </TextComponent>
       <RatingScaleComponent name="judgement">
+        <Param name="labels" val="" valType="str" updates="constant"/>
         <Param name="pos" val="0, 0.4" valType="str" updates="constant"/>
         <Param name="high" val="2" valType="code" updates="constant"/>
         <Param name="storeRating" val="True" valType="bool" updates="constant"/>
+        <Param name="marker" val="triangle" valType="str" updates="constant"/>
         <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="markerStart" val="" valType="str" updates="constant"/>
         <Param name="disappear" val="False" valType="bool" updates="constant"/>
         <Param name="size" val="1.0" valType="code" updates="constant"/>
-        <Param name="choiceLabelsAboveLine" val="False" valType="bool" updates="constant"/>
+        <Param name="tickHeight" val="" valType="str" updates="constant"/>
+        <Param name="showAccept" val="False" valType="bool" updates="constant"/>
         <Param name="storeRatingTime" val="True" valType="bool" updates="constant"/>
-        <Param name="forceEndRoutine" val="True" valType="bool" updates="constant"/>
+        <Param name="forceEndRoutine" val="False" valType="bool" updates="constant"/>
         <Param name="low" val="1" valType="code" updates="constant"/>
         <Param name="durationEstim" val="10" valType="code" updates="None"/>
         <Param name="stopVal" val="" valType="code" updates="constant"/>
         <Param name="visualAnalogScale" val="False" valType="bool" updates="constant"/>
         <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="lowAnchorText" val="" valType="str" updates="constant"/>
         <Param name="startType" val="time (s)" valType="str" updates="None"/>
         <Param name="stopType" val="condition" valType="str" updates="None"/>
         <Param name="scaleDescription" val="" valType="str" updates="constant"/>
-        <Param name="advancedParams"/>
-        <Param name="categoryChoices" val="ON, OFF" valType="str" updates="constant"/>
+        <Param name="storeHistory" val="False" valType="bool" updates="constant"/>
+        <Param name="categoryChoices" val="1,2" valType="str" updates="constant"/>
         <Param name="customize_everything" val="" valType="str" updates="constant"/>
         <Param name="name" val="judgement" valType="code" updates="None"/>
         <Param name="singleClick" val="True" valType="bool" updates="constant"/>
-        <Param name="highAnchorText" val="" valType="str" updates="constant"/>
       </RatingScaleComponent>
       <TextComponent name="text">
         <Param name="opacity" val="1" valType="code" updates="constant"/>
@@ -211,7 +214,7 @@
         <Param name="name" val="text" valType="code" updates="None"/>
         <Param name="wrapWidth" val="80" valType="code" updates="constant"/>
         <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="&#13;&#10;How sure are you about this answer?&#13;&#10;1 = I'm guessing. 2 = I think so. 3 = I'm totally sure." valType="str" updates="constant"/>
+        <Param name="text" val="&#13;&#10;Mennyire biztos ebben a válaszában?&#13;&#10;1 = Csak tippeltem. 2 = Azt hiszem, helyes.&#10;3 = Biztos, hogy helyes." valType="str" updates="constant"/>
         <Param name="stopVal" val="" valType="code" updates="constant"/>
         <Param name="durationEstim" val="10" valType="code" updates="None"/>
         <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
@@ -226,13 +229,17 @@
         <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
       </TextComponent>
       <RatingScaleComponent name="confidence">
+        <Param name="labels" val="" valType="str" updates="constant"/>
         <Param name="pos" val="0, -0.4" valType="str" updates="constant"/>
         <Param name="high" val="3" valType="code" updates="constant"/>
         <Param name="storeRating" val="True" valType="bool" updates="constant"/>
+        <Param name="marker" val="triangle" valType="str" updates="constant"/>
         <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="markerStart" val="" valType="str" updates="constant"/>
         <Param name="disappear" val="False" valType="bool" updates="constant"/>
         <Param name="size" val="1.0" valType="code" updates="constant"/>
-        <Param name="choiceLabelsAboveLine" val="False" valType="bool" updates="constant"/>
+        <Param name="tickHeight" val="" valType="str" updates="constant"/>
+        <Param name="showAccept" val="False" valType="bool" updates="constant"/>
         <Param name="storeRatingTime" val="True" valType="bool" updates="constant"/>
         <Param name="forceEndRoutine" val="True" valType="bool" updates="constant"/>
         <Param name="low" val="1" valType="code" updates="constant"/>
@@ -240,16 +247,14 @@
         <Param name="stopVal" val="" valType="code" updates="constant"/>
         <Param name="visualAnalogScale" val="False" valType="bool" updates="constant"/>
         <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="lowAnchorText" val="" valType="str" updates="constant"/>
         <Param name="startType" val="time (s)" valType="str" updates="None"/>
         <Param name="stopType" val="condition" valType="str" updates="None"/>
         <Param name="scaleDescription" val="" valType="str" updates="constant"/>
-        <Param name="advancedParams"/>
+        <Param name="storeHistory" val="False" valType="bool" updates="constant"/>
         <Param name="categoryChoices" val="1,2,3" valType="str" updates="constant"/>
         <Param name="customize_everything" val="" valType="str" updates="constant"/>
         <Param name="name" val="confidence" valType="code" updates="None"/>
         <Param name="singleClick" val="True" valType="bool" updates="constant"/>
-        <Param name="highAnchorText" val="" valType="str" updates="constant"/>
       </RatingScaleComponent>
     </Routine>
     <Routine name="startpause">
@@ -280,11 +285,13 @@
     <LoopInitiator loopType="TrialHandler" name="trials">
       <Param name="conditionsFile" val="BeatPerception_v10.csv" valType="str" updates="None"/>
       <Param name="name" val="trials" valType="code" updates="None"/>
+      <Param name="isTrials" val="True" valType="bool" updates="None"/>
       <Param name="random seed" val="" valType="code" updates="None"/>
       <Param name="loopType" val="random" valType="str" updates="None"/>
       <Param name="nReps" val="1" valType="code" updates="None"/>
       <Param name="endPoints" val="[0, 1]" valType="num" updates="None"/>
       <Param name="conditions" val="[{'sound1': u'BeatPerception_v10/1_tempo.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/2_on.wav', 'correctresp': u'ON'}, {'sound1': u'BeatPerception_v10/2_phase.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/2_tempo.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/3_on.wav', 'correctresp': u'ON'}, {'sound1': u'BeatPerception_v10/3_phase.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/3_tempo.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/4_tempo.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/5_tempo.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/6_on.wav', 'correctresp': u'ON'}, {'sound1': u'BeatPerception_v10/6_phase.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/6_tempo.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/7_on.wav', 'correctresp': u'ON'}, {'sound1': u'BeatPerception_v10/7_tempo.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/8_phase.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/8_tempo.wav', 'correctresp': u'OFF'}, {'sound1': u'BeatPerception_v10/9_phase.wav', 'correctresp': u'OFF'}]" valType="str" updates="None"/>
+      <Param name="Selected rows" val="" valType="str" updates="None"/>
     </LoopInitiator>
     <Routine name="startpause"/>
     <Routine name="trial"/>
