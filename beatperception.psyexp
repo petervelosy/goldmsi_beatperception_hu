@@ -59,65 +59,6 @@
         <Param name="store" val="nothing" valType="str" updates="constant"/>
       </KeyboardComponent>
     </Routine>
-    <Routine name="start">
-      <TextComponent name="text_start">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="text_start" valType="code" updates="None"/>
-        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
-        <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="Gold-MSI Ütemilleszkedés&#13;&#10;észlelését vizsgáló teszt&#13;&#10;&#13;&#10;Amennyiben elolvasta az instrukciókat, és nincsen további kérdése, kérjük, nyomja meg a SZÓKÖZ billentyűt a kísérlet indításához.&#13;&#10;&#13;&#10;&#13;&#10;" valType="str" updates="constant"/>
-        <Param name="stopVal" val="" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
-        <Param name="flip" val="" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="from exp settings" valType="str" updates="None"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="font" val="Arial" valType="str" updates="constant"/>
-        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
-      </TextComponent>
-      <KeyboardComponent name="start_key">
-        <Param name="correctAns" val="" valType="str" updates="constant"/>
-        <Param name="storeCorrect" val="False" valType="bool" updates="constant"/>
-        <Param name="name" val="start_key" valType="code" updates="None"/>
-        <Param name="stopVal" val="" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="forceEndRoutine" val="True" valType="bool" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="discard previous" val="True" valType="bool" updates="constant"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="allowedKeys" val="'space'" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="store" val="nothing" valType="str" updates="constant"/>
-      </KeyboardComponent>
-    </Routine>
-    <Routine name="dummypause">
-      <TextComponent name="text_2">
-        <Param name="opacity" val="1" valType="code" updates="constant"/>
-        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
-        <Param name="name" val="text_2" valType="code" updates="None"/>
-        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
-        <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="" valType="str" updates="constant"/>
-        <Param name="stopVal" val="2" valType="code" updates="constant"/>
-        <Param name="durationEstim" val="" valType="code" updates="None"/>
-        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
-        <Param name="flip" val="" valType="str" updates="constant"/>
-        <Param name="startEstim" val="" valType="code" updates="None"/>
-        <Param name="units" val="from exp settings" valType="str" updates="None"/>
-        <Param name="startType" val="time (s)" valType="str" updates="None"/>
-        <Param name="ori" val="0" valType="code" updates="constant"/>
-        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
-        <Param name="startVal" val="0.0" valType="code" updates="None"/>
-        <Param name="font" val="Arial" valType="str" updates="constant"/>
-        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
-      </TextComponent>
-    </Routine>
     <Routine name="trial">
       <CodeComponent name="code">
         <Param name="Begin Experiment" val="sound_1 = sound.Sound('A',secs=1)&#10;" valType="extendedCode" updates="constant"/>
@@ -159,6 +100,65 @@
         <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
       </TextComponent>
     </Routine>
+    <Routine name="dummypause">
+      <TextComponent name="text_2">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="text_2" valType="code" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="text" val="" valType="str" updates="constant"/>
+        <Param name="stopVal" val="2" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
+        <Param name="flip" val="" valType="str" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="start">
+      <TextComponent name="text_start">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="text_start" valType="code" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="text" val="Gold-MSI Ütemilleszkedés&#13;&#10;észlelését vizsgáló teszt&#13;&#10;&#13;&#10;Amennyiben elolvasta az instrukciókat, és nincsen további kérdése, kérjük, nyomja meg a SZÓKÖZ billentyűt a kísérlet indításához.&#13;&#10;&#13;&#10;&#13;&#10;" valType="str" updates="constant"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
+        <Param name="flip" val="" valType="str" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+      </TextComponent>
+      <KeyboardComponent name="start_key">
+        <Param name="correctAns" val="" valType="str" updates="constant"/>
+        <Param name="storeCorrect" val="False" valType="bool" updates="constant"/>
+        <Param name="name" val="start_key" valType="code" updates="None"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="forceEndRoutine" val="True" valType="bool" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="discard previous" val="True" valType="bool" updates="constant"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="allowedKeys" val="'space'" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="store" val="nothing" valType="str" updates="constant"/>
+      </KeyboardComponent>
+    </Routine>
     <Routine name="decide">
       <TextComponent name="decide_text">
         <Param name="opacity" val="1" valType="code" updates="constant"/>
@@ -166,7 +166,7 @@
         <Param name="name" val="decide_text" valType="code" updates="None"/>
         <Param name="wrapWidth" val="80" valType="code" updates="constant"/>
         <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="Illeszkedtek a pittyegő hangok a zene ütemére, &#13;&#10;vagy el voltak csúszva a zenéhez képest?&#10;1 = Illeszedtek, 2 = El voltak csúszva" valType="str" updates="constant"/>
+        <Param name="text" val="Illeszkedtek a pittyegő hangok a zene ütemére, &#13;&#10;vagy el voltak csúszva a zenéhez képest?&#10;0 = El voltak csúszva, 1 = Illeszedtek" valType="str" updates="constant"/>
         <Param name="stopVal" val="" valType="code" updates="constant"/>
         <Param name="durationEstim" val="10" valType="code" updates="None"/>
         <Param name="pos" val="[0, 0.8]" valType="code" updates="constant"/>
@@ -183,7 +183,7 @@
       <RatingScaleComponent name="judgement">
         <Param name="labels" val="" valType="str" updates="constant"/>
         <Param name="pos" val="0, 0.4" valType="str" updates="constant"/>
-        <Param name="high" val="2" valType="code" updates="constant"/>
+        <Param name="high" val="1" valType="code" updates="constant"/>
         <Param name="storeRating" val="True" valType="bool" updates="constant"/>
         <Param name="marker" val="triangle" valType="str" updates="constant"/>
         <Param name="startVal" val="0.0" valType="code" updates="None"/>
@@ -194,7 +194,7 @@
         <Param name="showAccept" val="False" valType="bool" updates="constant"/>
         <Param name="storeRatingTime" val="True" valType="bool" updates="constant"/>
         <Param name="forceEndRoutine" val="False" valType="bool" updates="constant"/>
-        <Param name="low" val="1" valType="code" updates="constant"/>
+        <Param name="low" val="0" valType="code" updates="constant"/>
         <Param name="durationEstim" val="10" valType="code" updates="None"/>
         <Param name="stopVal" val="" valType="code" updates="constant"/>
         <Param name="visualAnalogScale" val="False" valType="bool" updates="constant"/>
@@ -203,7 +203,7 @@
         <Param name="stopType" val="condition" valType="str" updates="None"/>
         <Param name="scaleDescription" val="" valType="str" updates="constant"/>
         <Param name="storeHistory" val="False" valType="bool" updates="constant"/>
-        <Param name="categoryChoices" val="1,2" valType="str" updates="constant"/>
+        <Param name="categoryChoices" val="0,1" valType="str" updates="constant"/>
         <Param name="customize_everything" val="" valType="str" updates="constant"/>
         <Param name="name" val="judgement" valType="code" updates="None"/>
         <Param name="singleClick" val="True" valType="bool" updates="constant"/>
@@ -214,7 +214,7 @@
         <Param name="name" val="text" valType="code" updates="None"/>
         <Param name="wrapWidth" val="80" valType="code" updates="constant"/>
         <Param name="color" val="white" valType="str" updates="constant"/>
-        <Param name="text" val="&#13;&#10;Mennyire biztos ebben a válaszában?&#13;&#10;1 = Csak tippeltem. 2 = Azt hiszem, helyes.&#10;3 = Biztos, hogy helyes." valType="str" updates="constant"/>
+        <Param name="text" val="&#13;&#10;Mennyire biztos ebben a válaszában?&#13;&#10;1 = Csak tippeltem. 2 = Azt hiszem, hogy helyes.&#10;3 = Biztos vagyok benne, hogy helyes." valType="str" updates="constant"/>
         <Param name="stopVal" val="" valType="code" updates="constant"/>
         <Param name="durationEstim" val="10" valType="code" updates="None"/>
         <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
